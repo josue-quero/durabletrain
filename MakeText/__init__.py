@@ -59,7 +59,7 @@ def summarize_line(text):
   average = int(sumValues / len(sentenceValue))
   summary = ''
   for sentence in sentences:
-      if (sentence in sentenceValue) and (sentenceValue[sentence] > (1.1 * average)):
+      if (sentence in sentenceValue) and (sentenceValue[sentence] > (1.5 * average)):
           summary += " " + sentence
   return summary
 

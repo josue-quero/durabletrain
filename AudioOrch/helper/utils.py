@@ -4,9 +4,9 @@ class SplitWavAudioMubin():
     def __init__(self, folder, filename):
         self.folder = folder
         self.filename = filename
-        self.filepath = filename
+        self.filepath = folder + '\\' + filename
         self.output_folder = folder + '\\' + 'splitted'
-        self.audio = AudioSegment.from_mp3(self.filepath)
+        self.audio = AudioSegment.from_wav(self.filepath)
 
     def get_duration(self):
         return self.audio.duration_seconds
@@ -16,7 +16,7 @@ class SplitWavAudioMubin():
         t2 = to_min * 60 * 1000
         split_audio = self.audio[t1:t2]
         filepath = self.output_folder + '\\' + split_filename
-        
+
         split_audio.export(filepath, format="wav")
         return filepath
 
